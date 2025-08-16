@@ -33,7 +33,7 @@ const Navigation = ({
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-28">
+        <div className="flex items-center justify-between h-40">
           {/* Left Menu */}
           <div className="hidden md:flex items-center space-x-8">
             <Link
@@ -57,13 +57,13 @@ const Navigation = ({
               <img
                 src="/logo.png"
                 alt="BezelGuard"
-                className="hidden md:block h-24 w-auto"
+                className="hidden md:block h-36 w-auto"
               />
               {/* Small abbreviated logo for mobile */}
               <img
                 src="/logosmall.png"
                 alt="BG"
-                className="block md:hidden h-24 w-auto"
+                className="block md:hidden h-36 w-auto"
               />
             </Link>
           </div>
