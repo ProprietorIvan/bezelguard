@@ -53,10 +53,17 @@ const Navigation = ({
           {/* Center Logo */}
           <div className="flex items-center justify-center">
             <Link href="/" className="flex-shrink-0">
+              {/* Full logo for desktop/tablet */}
               <img
                 src="/logo.png"
                 alt="BezelGuard"
-                className="h-8 w-auto"
+                className="hidden md:block h-8 w-auto"
+              />
+              {/* Small abbreviated logo for mobile */}
+              <img
+                src="/logosmall.png"
+                alt="BG"
+                className="block md:hidden h-8 w-auto"
               />
             </Link>
           </div>
