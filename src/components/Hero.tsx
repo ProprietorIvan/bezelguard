@@ -1,138 +1,121 @@
-import { Clock, Phone } from "lucide-react";
-import Quote from "./Quote";
-import BusinessFrom from "./BusinessForm";
-import Testemonials from "@/components/Testemonials";
+import Link from "next/link";
 
-interface HeroProps {
-  examples: string[];
-  context: string;
-  title: string;
-  subtitle: string;
-  description: string;
-  quoteTitle: string;
-  quoteSubtitle: string;
-  quoteDescription: string;
-}
-
-const Hero = ({
-  examples,
-  context,
-  title,
-  subtitle,
-  description,
-  quoteTitle = "",
-  quoteSubtitle = "",
-  quoteDescription = "",
-}: HeroProps) => (
+const Hero = () => (
   <>
-    <section className="relative px-4 sm:px-6 pt-20 sm:pt-32 pb-16 sm:pb-24 text-center min-h-[100svh] flex items-center justify-center overflow-hidden">
-      {/* Background Video with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="object-cover w-full h-full"
-        >
-          <source src="/photos/homepage/background.mp4" type="video/mp4" />
-        </video>
+    {/* Hero Section with Background Image */}
+    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image Placeholder */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100">
+        {/* Image placeholder - replace with actual luxury watch lifestyle image */}
+        <div className="absolute inset-0 bg-[url('/photos/homepage/bezel-guard-hero.jpg')] bg-cover bg-center opacity-30"></div>
       </div>
+
       {/* Content */}
-      <div className="relative z-10 w-full max-w-4xl mx-auto px-4">
-        <div>
-          <section>
-            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white tracking-tight mb-4 sm:mb-6 leading-[1.1]">
-              {title}
-            </h1>
-            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white tracking-tight mb-4 sm:mb-6 leading-[1.1]">
-              {subtitle}
-            </h1>
-            <p className="bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300 mb-7">
-              {description}
-            </p>
-            <div className="flex gap-2 justify-center">
-              <a
-                onClick={() => {
-                  const yourhome = document.querySelector("#yourhome");
-                  if (yourhome) {
-                    yourhome.scrollIntoView({
-                      behavior: "smooth",
-                      block: "end",
-                      inline: "nearest",
-                    });
-                  }
-                }}
-                className="bg-black text-white py-[12px] px-[24px] rounded-[99px] hover:bg-[#ffc527] hover:text-black"
-              >
-                Your Home
-              </a>
-              <a
-                onClick={() => {
-                  const businessFormCards =
-                    document.querySelector("#businessFormCards");
-                  if (businessFormCards) {
-                    businessFormCards.scrollIntoView({
-                      behavior: "smooth",
-                      block: "end",
-                      inline: "nearest",
-                    });
-                  }
-                  const businessFormSubmit = document.querySelector(
-                    "#businessFormSubmit"
-                  );
-                  setTimeout(() => {
-                    if (businessFormSubmit) {
-                      businessFormSubmit.scrollIntoView({
-                        behavior: "smooth",
-                        block: "end",
-                        inline: "nearest",
-                      });
-                    }
-                  }, 2500);
-                }}
-                className="bg-black text-white py-[12px] px-[24px] rounded-[99px] hover:bg-[#ffc527] hover:text-black"
-              >
-                Your Business
-              </a>
-            </div>
-          </section>
-          <section className="flex justify-between my-[70px]">
-            <div className="text-white">
-              <h2 className="text-4xl font-bold mb-2">1,200+</h2>
-              <p className="lazyloaded">Projects completed</p>
-            </div>
-            <div className="text-white">
-              <h2 className="text-4xl font-bold  mb-2">4.9</h2>
-              <p>Customer rating</p>
-            </div>
-            <div className="text-white">
-              <h2 className="text-4xl font-bold  mb-2">24/7</h2>
-              <p>Support available</p>
-            </div>
-          </section>
+      <div className="relative z-10 text-center text-gray-900 px-4 max-w-4xl mx-auto">
+        <h1 className="text-lg font-light tracking-widest uppercase mb-4 text-gray-600">
+          PROTECTION. SIMPLIFIED.
+        </h1>
+        <h2 className="text-5xl md:text-7xl font-light tracking-tight mb-8 leading-tight">
+          BEZELGUARD.
+          <br />
+          <span className="font-normal">OUT NOW.</span>
+        </h2>
+
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <Link
+            href="/shop"
+            className="bg-gray-900 text-white px-8 py-4 font-light hover:bg-gray-800 transition-colors"
+          >
+            SHOP NOW
+          </Link>
+          <Link
+            href="/technology"
+            className="border border-gray-900 text-gray-900 px-8 py-4 font-light hover:bg-gray-900 hover:text-white transition-colors"
+          >
+            LEARN MORE
+          </Link>
         </div>
       </div>
     </section>
 
-    {/* Quote Section - Fixed for mobile */}
-    <div className="w-full max-w-4xl mx-auto text-center px-4 pt-12 pb-8">
-      <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium text-black mb-6 tracking-tight max-w-[90%] sm:max-w-3xl mx-auto break-words flex flex-col w-[510px]">
-        {quoteTitle}
-      </h1>
+    {/* Brand Quote Section */}
+    <section className="bg-gray-50 text-gray-900 py-20">
+      <div className="max-w-4xl mx-auto text-center px-4">
+        <h3 className="text-3xl md:text-4xl font-light leading-relaxed">
+                        &quot;Think of it as a guardian angel for your timepiece.&quot;
+        </h3>
 
-      <p className="text-xl sm:text-2xl text-black/80 font-normal tracking-tight mb-6 max-w-[90%] sm:max-w-2xl mx-auto w-[450px]">
-        {quoteSubtitle}
-      </p>
-
-      <div className="text-base text-black/60 font-normal max-w-xl mx-auto leading-relaxed mb-10">
-        {quoteDescription}
+        {/* Brand Logos */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 opacity-40">
+          <div className="flex items-center justify-center">
+            <div className="text-2xl font-light text-gray-600">GQ</div>
+          </div>
+          <div className="flex items-center justify-center">
+            <div className="text-2xl font-light text-gray-600">Bloomberg</div>
+          </div>
+          <div className="flex items-center justify-center">
+            <div className="text-2xl font-light text-gray-600">Forbes</div>
+          </div>
+          <div className="flex items-center justify-center">
+            <div className="text-2xl font-light text-gray-600">
+              Watch Journal
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <Quote examples={examples} context={context} />
-    <Testemonials />
-    <BusinessFrom />
+    {/* Shop The Look Section */}
+    <section className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4">
+        <h2 className="text-4xl font-bold text-center mb-16 tracking-tight">
+          SHOP THE LOOK
+        </h2>
+
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          {/* Lifestyle Image */}
+          <div className="relative aspect-square bg-gray-100 rounded-lg overflow-hidden">
+            {/* Image placeholder - luxury lifestyle with BezelGuard */}
+            <div className="absolute inset-0 bg-gradient-to-br from-slate-200 to-slate-200 flex items-center justify-center">
+              <div className="text-center text-gray-600">
+                <div className="w-16 h-16 bg-slate-700 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <div className="w-8 h-8 bg-white rounded-full"></div>
+                </div>
+                <p>Luxury Lifestyle Image</p>
+                <p className="text-sm">BezelGuard in Action</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Product Card */}
+          <div className="text-center">
+            <div className="bg-gray-50 p-8 rounded-lg">
+              <div className="aspect-square bg-white rounded-lg mb-6 flex items-center justify-center">
+                <div className="text-center text-gray-600">
+                  <div className="w-20 h-20 bg-slate-900 rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <div className="w-12 h-12 bg-slate-700 rounded-full"></div>
+                  </div>
+                  <p className="font-medium">BezelGuard Pro</p>
+                </div>
+              </div>
+              <h3 className="text-xl font-bold mb-2 tracking-tight">
+                BEZELGUARD PRO - STEALTH BLACK
+              </h3>
+              <p className="text-gray-600 mb-4">
+                Ultimate protection for luxury timepieces
+              </p>
+              <p className="text-2xl font-bold mb-6">$24.99 + shipping</p>
+              <Link
+                href="/product/bezelguard-pro"
+                className="bg-gray-900 text-white px-8 py-3 font-light hover:bg-gray-800 transition-colors inline-block"
+              >
+                ADD TO CART
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </>
 );
 

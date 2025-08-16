@@ -7,10 +7,10 @@ const TermsOfService = () => {
   return (
     <>
       <Head>
-        <title>Terms of Service | Riviera Yachts</title>
+        <title>Terms of Service | BezelGuard</title>
         <meta
           name="description"
-          content="View the terms of service for Riviera Yachts, detailing the conditions for using our yacht charter services."
+          content="View the terms of service for BezelGuard, detailing the conditions for using our watch security products and services."
         />
       </Head>
 
@@ -37,15 +37,15 @@ const TermsOfService = () => {
                   Introduction
                 </h2>
                 <p>
-                  Welcome to Riviera Yachts. These terms and conditions govern
-                  your use of our website and services. By accessing our website
-                  or using our services, you agree to these terms. Please read
-                  them carefully.
+                  Welcome to BezelGuard. These terms and conditions govern your
+                  use of our website and services. By accessing our website or
+                  using our services, you agree to these terms. Please read them
+                  carefully.
                 </p>
                 <p>
                   These Terms of Service (&quot;Terms&quot;) constitute a
-                  legally binding agreement between you and Riviera Yachts
-                  governing your access to and use of the website and services.
+                  legally binding agreement between you and BezelGuard governing
+                  your access to and use of the website and services.
                 </p>
               </section>
 
@@ -54,23 +54,18 @@ const TermsOfService = () => {
                   Use of Services
                 </h2>
                 <p>
-                  Riviera Yachts provides a platform for users to browse,
-                  inquire about, and book luxury yacht charters. Our services
-                  include:
+                  BezelGuard provides advanced security solutions for luxury
+                  timepieces. Our services include:
                 </p>
                 <ul className="list-disc pl-6 mb-6 space-y-2 text-gray-600">
-                  <li>Yacht charter inquiry and booking services</li>
+                  <li>Watch security device sales and support</li>
                   <li>
-                    Information about yacht specifications, availability, and
+                    Information about product specifications, features, and
                     pricing
                   </li>
+                  <li>Customer support and technical assistance</li>
                   <li>
-                    Communication channels between clients and our yacht charter
-                    specialists
-                  </li>
-                  <li>
-                    Informational content about yacht chartering, destinations,
-                    and experiences
+                    Educational content about watch security and protection
                   </li>
                 </ul>
               </section>
@@ -258,11 +253,11 @@ const TermsOfService = () => {
                 </p>
                 <div className="mt-4">
                   <p>
-                    <strong>Riviera Yachts</strong>
+                    <strong>BezelGuard</strong>
                   </p>
-                  <p>Port Hercule, Monaco</p>
-                  <p>Email: legal@rivierayachts.com</p>
-                  <p>Phone: +377 6 43 91 76 18</p>
+                  <p>Rue du Rhône 114, 1204 Geneva, Switzerland</p>
+                  <p>Email: legal@bezelguard.com</p>
+                  <p>Phone: +41 22 555 01 99</p>
                 </div>
               </section>
             </div>

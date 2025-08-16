@@ -7,20 +7,20 @@ export default function Privacy() {
   return (
     <>
       <Head>
-        <title>Privacy Policy | Riviera Yachts</title>
+        <title>Privacy Policy | BezelGuard</title>
         <meta
           name="description"
-          content="Privacy Policy for Riviera Yachts - Learn how we handle and protect your information."
+          content="Privacy Policy for BezelGuard - Learn how we handle and protect your information."
         />
       </Head>
       <Navigation />
-      <main className="container mx-auto px-4 py-16 max-w-5xl">
+      <main className="container mx-auto px-4 py-32 max-w-5xl">
         <h1 className="text-4xl font-bold mb-8">Privacy Policy</h1>
 
         <section className="mb-8">
-          <p className="mb-4">Last Updated: June 15, 2023</p>
+          <p className="mb-4">Last Updated: March 2024</p>
           <p className="mb-4">
-            At Riviera Yachts, we respect your privacy and are committed to
+            At BezelGuard, we respect your privacy and are committed to
             protecting your personal data. This privacy policy will inform you
             about how we look after your personal data when you visit our
             website and tell you about your privacy rights and how the law
@@ -156,8 +156,8 @@ export default function Privacy() {
             us:
           </p>
           <ul className="list-disc ml-6">
-            <li className="mb-2">By email: info@rivierayachts.com</li>
-            <li className="mb-2">By phone: +33 (0) 4 93 63 18 08</li>
+            <li className="mb-2">By email: privacy@bezelguard.com</li>
+            <li className="mb-2">By phone: +41 22 555 01 99</li>
           </ul>
         </section>
       </main>

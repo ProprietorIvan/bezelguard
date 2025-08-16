@@ -1,9 +1,7 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
-import { Menu, X, MessageSquare } from "lucide-react";
-import Image from "next/image";
+import { Menu, X, Search, User, ShoppingBag } from "lucide-react";
 import Link from "next/link";
-import NavWhatsAppButton from "./NavWhatsAppButton";
 
 interface NavigationProps {
   currentPage?: string;
@@ -20,65 +18,80 @@ const Navigation = ({
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { text: "Home", url: "/" },
-    { text: "Fleet", url: "/fleet" },
-    { text: "Contact", url: "/contact" },
+    { text: "SHOP", url: "/shop" },
+    { text: "MODELS", url: "/models" },
+    { text: "TECHNOLOGY", url: "/technology" },
+    { text: "SUPPORT", url: "/support" },
   ];
 
   return (
     <nav
       className={`${
         transparent
-          ? "absolute top-0 left-0 right-0 z-50"
-          : "bg-white border-b border-gray-200"
+          ? "absolute top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md"
+          : "bg-white/95 backdrop-blur-md border-b border-gray-100"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-24">
-          {/* Logo */}
-          <div className="flex items-center">
-            <Link href="/" className="flex-shrink-0">
-              <div className="relative w-[20.28rem] h-[5.915rem]">
-                <Image
-                  src="/logo.png"
-                  alt="Riviera Yachts"
-                  fill
-                  className="object-contain object-left"
-                  priority
-                />
-              </div>
+        <div className="flex items-center justify-between h-16">
+          {/* Left Menu */}
+          <div className="hidden md:flex items-center space-x-8">
+            <Link
+              href="/shop"
+              className="text-sm font-medium tracking-wide text-gray-700 hover:text-gray-900 transition-colors"
+            >
+              SHOP
+            </Link>
+            <Link
+              href="/models"
+              className="text-sm font-medium tracking-wide text-gray-700 hover:text-gray-900 transition-colors"
+            >
+              MODELS
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center">
-            <div className="flex items-center gap-8">
-              {navLinks.map((link, index) => (
-                <Link
-                  key={index}
-                  href={link.url}
-                  className={`text-sm font-medium transition-colors ${
-                    transparent
-                      ? "text-white hover:text-white/80"
-                      : "text-gray-700 hover:text-gray-900"
-                  }`}
-                >
-                  {link.text}
-                </Link>
-              ))}
-              <NavWhatsAppButton transparent={transparent} />
-            </div>
+          {/* Center Logo */}
+          <div className="flex items-center justify-center">
+            <Link href="/" className="flex-shrink-0">
+              <img
+                src="/logo.png"
+                alt="BezelGuard"
+                className="h-8 w-auto"
+              />
+            </Link>
+          </div>
+
+          {/* Right Menu */}
+          <div className="hidden md:flex items-center space-x-8">
+            <Link
+              href="/technology"
+              className="text-sm font-medium tracking-wide text-gray-700 hover:text-gray-900 transition-colors"
+            >
+              TECHNOLOGY
+            </Link>
+            <Link
+              href="/support"
+              className="text-sm font-medium tracking-wide text-gray-700 hover:text-gray-900 transition-colors"
+            >
+              SUPPORT
+            </Link>
+          </div>
+
+          {/* Mobile Actions */}
+          <div className="md:hidden flex items-center space-x-4">
+            <button className="p-2 text-gray-700 hover:text-gray-900 transition-colors">
+              <Search className="h-5 w-5" />
+            </button>
+            <button className="p-2 text-gray-700 hover:text-gray-900 transition-colors">
+              <ShoppingBag className="h-5 w-5" />
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="md:hidden absolute right-4">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`p-2 rounded-md ${
-                transparent
-                  ? "text-white hover:bg-white/10"
-                  : "text-gray-700 hover:bg-gray-100"
-              } transition-colors`}
+              className="p-2 text-gray-700 hover:text-gray-900 transition-colors"
             >
               {isMenuOpen ? (
                 <X className="h-5 w-5" />
@@ -91,21 +104,36 @@ const Navigation = ({
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg z-50">
-            <div className="px-4 py-3 space-y-1">
-              {navLinks.map((link, index) => (
-                <Link
-                  key={index}
-                  href={link.url}
-                  onClick={() => setIsMenuOpen(false)}
-                  className="block py-2 px-3 text-base text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-colors"
-                >
-                  {link.text}
-                </Link>
-              ))}
-              <div className="mt-2">
-                <NavWhatsAppButton />
-              </div>
+          <div className="md:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md shadow-lg z-50 border-t border-gray-100">
+            <div className="px-4 py-6 space-y-1">
+              <Link
+                href="/shop"
+                onClick={() => setIsMenuOpen(false)}
+                className="block py-3 px-3 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors"
+              >
+                SHOP
+              </Link>
+              <Link
+                href="/models"
+                onClick={() => setIsMenuOpen(false)}
+                className="block py-3 px-3 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors"
+              >
+                MODELS
+              </Link>
+              <Link
+                href="/technology"
+                onClick={() => setIsMenuOpen(false)}
+                className="block py-3 px-3 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors"
+              >
+                TECHNOLOGY
+              </Link>
+              <Link
+                href="/support"
+                onClick={() => setIsMenuOpen(false)}
+                className="block py-3 px-3 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors"
+              >
+                SUPPORT
+              </Link>
             </div>
           </div>
         )}

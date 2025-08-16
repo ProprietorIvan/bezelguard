@@ -41,7 +41,7 @@ const Testimonials = () => {
           </div>
           <div className="ml-4">
             <h3 className="font-serif text-lg">{review.name}</h3>
-            <p className="text-blue-200/90 text-sm">{review.role}</p>
+            <p className="text-slate-300/90 text-sm">{review.role}</p>
           </div>
         </div>
         <div className="flex gap-1 mb-3">
@@ -57,7 +57,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-slate-50 to-blue-50">
+    <section className="py-16 md:py-24 bg-gradient-to-b from-slate-50 to-slate-60">
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-serif text-center mb-4">
           What Our Clients Say

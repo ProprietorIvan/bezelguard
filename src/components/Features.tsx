@@ -1,69 +1,43 @@
-import React from 'react';
-import { 
-  Bot, 
-  CalendarCheck, 
-  DollarSign, 
-  Shield, 
-  ListTodo, 
-  Heart 
-} from 'lucide-react';
+import React from "react";
+import { Truck, RefreshCw, PenTool, MapPin } from "lucide-react";
 
-const FeaturesSection = () => {
+const Features = () => {
   const features = [
     {
-      icon: <Bot />,
-      title: "Instant AI-Powered Quotes",
-      description: "Get accurate repair estimates in minutes by simply uploading photos - no more waiting days for in-person assessments."
+      icon: <Truck className="w-12 h-12" />,
+      title: "FREE SHIPPING OVER $50",
+      subtitle: "Express shipping available",
     },
     {
-      icon: <CalendarCheck />,
-      title: "Smart Scheduling",
-      description: "Book appointments instantly through our real-time calendar integration. Pick a time that works for you."
+      icon: <RefreshCw className="w-12 h-12" />,
+      title: "SATISFIED OR REFUNDED",
+      subtitle: "Easy 14-days returns",
     },
     {
-      icon: <DollarSign />,
-      title: "Transparent Pricing",
-      description: "Know exactly what you'll pay upfront with our detailed breakdowns covering labor and materials."
+      icon: <PenTool className="w-12 h-12" />,
+      title: "DESIGNED FOR SECURITY",
+      subtitle: "The ultimate in comfort and protection",
     },
     {
-      icon: <Shield />,
-      title: "Quality Assurance",
-      description: "All our handymen are thoroughly vetted and background-checked for your peace of mind."
+      icon: <MapPin className="w-12 h-12" />,
+      title: "MADE WITH PRECISION",
+      subtitle: "Meticulously crafted from premium materials",
     },
-    {
-      icon: <ListTodo />,
-      title: "Project Tracking",
-      description: "Monitor your repair status in real-time with photo updates and progress notifications."
-    },
-    {
-      icon: <Heart />,
-      title: "Satisfaction Guarantee",
-      description: "Not happy with the work? We'll make it right or your money back - no questions asked."
-    }
   ];
 
   return (
-    <section className="py-16 px-5" id="features">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl lg:text-5xl font-bold lg:tracking-tight">
-          Everything You Need for Hassle-Free Home Repairs
-        </h2>
-        <p className="text-lg mt-4 text-slate-600 dark:text-slate-400">
-          Modern solutions for modern homeowners
-        </p>
-        
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+    <section className="py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="grid md:grid-cols-4 gap-8">
           {features.map((feature, index) => (
-            <div key={index} className="flex gap-4 items-start">
-              <div className="bg-black dark:bg-slate-800 rounded-full flex justify-center items-center w-8 h-8 text-white text-lg">
+            <div key={index} className="text-center">
+              <div className="flex justify-center mb-6 text-gray-600">
                 {feature.icon}
               </div>
-              <div className="flex-1">
-                <h3 className="font-semibold text-lg">{feature.title}</h3>
-                <p className="text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
+              <h3 className="font-bold text-sm tracking-wide mb-2 text-gray-900">
+                {feature.title}
+              </h3>
+              <p className="text-gray-600 text-sm">{feature.subtitle}</p>
             </div>
           ))}
         </div>
@@ -72,4 +46,4 @@ const FeaturesSection = () => {
   );
 };
 
-export default FeaturesSection;
+export default Features;
